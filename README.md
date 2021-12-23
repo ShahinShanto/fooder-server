@@ -1,5 +1,5 @@
 # Fooder
-[Click here to visit MotoShop Website]()
+[Click here to visit Website]()
 
 ## Short Description
 
