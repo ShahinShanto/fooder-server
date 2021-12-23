@@ -12,10 +12,11 @@ app.use(cors());
 app.use(express.json());
 
 //Database Connection URI
-const { MongoClient } = require("mongodb");
 
+const { MongoClient } = require('mongodb');
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ybuqx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 app.get("/", (req, res) => {
   res.send("Running Server");
@@ -30,7 +31,7 @@ async function run() {
     await client.connect();
     console.log("connected to database successfully");
 
-    const database = client.db("motoshop");
+    const database = client.db("fooder");
     const productsCollection = database.collection("products");
     const ordersCollection = database.collection("orders");
     const reviewsCollection = database.collection("reviews");
